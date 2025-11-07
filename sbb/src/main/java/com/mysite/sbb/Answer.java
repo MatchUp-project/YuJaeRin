@@ -9,8 +9,11 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 
+
 import lombok.Getter;
 import lombok.Setter;
+
+import org.springframework.data.annotation.CreatedDate;
 
 @Getter
 @Setter
@@ -23,8 +26,8 @@ public class Answer {
     @Column(columnDefinition = "TEXT")
     private String content;
 
-    @CreatedData
-    private LocalDataTime createDate;
+    @CreatedDate
+    private LocalDateTime createDate;
 
     @ManyToOne
     private Question question;
